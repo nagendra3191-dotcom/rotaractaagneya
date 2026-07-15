@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TeamRouteImport } from './routes/team'
+import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as PeopleRouteImport } from './routes/people'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,6 +18,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
   path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PeopleRoute = PeopleRouteImport.update({
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/people': typeof PeopleRoute
+  '/projects': typeof ProjectsRoute
   '/team': typeof TeamRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/people': typeof PeopleRoute
+  '/projects': typeof ProjectsRoute
   '/team': typeof TeamRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/people': typeof PeopleRoute
+  '/projects': typeof ProjectsRoute
   '/team': typeof TeamRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/people' | '/team'
+  fullPaths: '/' | '/about' | '/people' | '/projects' | '/team'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/people' | '/team'
-  id: '__root__' | '/' | '/about' | '/people' | '/team'
+  to: '/' | '/about' | '/people' | '/projects' | '/team'
+  id: '__root__' | '/' | '/about' | '/people' | '/projects' | '/team'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   PeopleRoute: typeof PeopleRoute
+  ProjectsRoute: typeof ProjectsRoute
   TeamRoute: typeof TeamRoute
 }
 
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/team'
       fullPath: '/team'
       preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/people': {
@@ -106,6 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   PeopleRoute: PeopleRoute,
+  ProjectsRoute: ProjectsRoute,
   TeamRoute: TeamRoute,
 }
 export const routeTree = rootRouteImport
