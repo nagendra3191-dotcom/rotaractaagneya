@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as ProjectsRouteImport } from './routes/projects'
-import { Route as PeopleRouteImport } from './routes/people'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -23,11 +22,6 @@ const TeamRoute = TeamRouteImport.update({
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PeopleRoute = PeopleRouteImport.update({
-  id: '/people',
-  path: '/people',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -44,14 +38,12 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/people': typeof PeopleRoute
   '/projects': typeof ProjectsRoute
   '/team': typeof TeamRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/people': typeof PeopleRoute
   '/projects': typeof ProjectsRoute
   '/team': typeof TeamRoute
 }
@@ -59,22 +51,20 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/people': typeof PeopleRoute
   '/projects': typeof ProjectsRoute
   '/team': typeof TeamRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/people' | '/projects' | '/team'
+  fullPaths: '/' | '/about' | '/projects' | '/team'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/people' | '/projects' | '/team'
-  id: '__root__' | '/' | '/about' | '/people' | '/projects' | '/team'
+  to: '/' | '/about' | '/projects' | '/team'
+  id: '__root__' | '/' | '/about' | '/projects' | '/team'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  PeopleRoute: typeof PeopleRoute
   ProjectsRoute: typeof ProjectsRoute
   TeamRoute: typeof TeamRoute
 }
@@ -93,13 +83,6 @@ declare module '@tanstack/react-router' {
       path: '/projects'
       fullPath: '/projects'
       preLoaderRoute: typeof ProjectsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/people': {
-      id: '/people'
-      path: '/people'
-      fullPath: '/people'
-      preLoaderRoute: typeof PeopleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -122,7 +105,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  PeopleRoute: PeopleRoute,
   ProjectsRoute: ProjectsRoute,
   TeamRoute: TeamRoute,
 }
