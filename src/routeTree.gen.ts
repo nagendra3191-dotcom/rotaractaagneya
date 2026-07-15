@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as StatisticsRouteImport } from './routes/statistics'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as AwardsRouteImport } from './routes/awards'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -29,6 +30,11 @@ const StatisticsRoute = StatisticsRouteImport.update({
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AwardsRoute = AwardsRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/awards': typeof AwardsRoute
+  '/gallery': typeof GalleryRoute
   '/projects': typeof ProjectsRoute
   '/statistics': typeof StatisticsRoute
   '/team': typeof TeamRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/awards': typeof AwardsRoute
+  '/gallery': typeof GalleryRoute
   '/projects': typeof ProjectsRoute
   '/statistics': typeof StatisticsRoute
   '/team': typeof TeamRoute
@@ -68,20 +76,36 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/awards': typeof AwardsRoute
+  '/gallery': typeof GalleryRoute
   '/projects': typeof ProjectsRoute
   '/statistics': typeof StatisticsRoute
   '/team': typeof TeamRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/awards' | '/projects' | '/statistics' | '/team'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/awards'
+    | '/gallery'
+    | '/projects'
+    | '/statistics'
+    | '/team'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/awards' | '/projects' | '/statistics' | '/team'
+  to:
+    | '/'
+    | '/about'
+    | '/awards'
+    | '/gallery'
+    | '/projects'
+    | '/statistics'
+    | '/team'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/awards'
+    | '/gallery'
     | '/projects'
     | '/statistics'
     | '/team'
@@ -91,6 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AwardsRoute: typeof AwardsRoute
+  GalleryRoute: typeof GalleryRoute
   ProjectsRoute: typeof ProjectsRoute
   StatisticsRoute: typeof StatisticsRoute
   TeamRoute: typeof TeamRoute
@@ -117,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/projects'
       fullPath: '/projects'
       preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/awards': {
@@ -147,6 +179,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AwardsRoute: AwardsRoute,
+  GalleryRoute: GalleryRoute,
   ProjectsRoute: ProjectsRoute,
   StatisticsRoute: StatisticsRoute,
   TeamRoute: TeamRoute,
