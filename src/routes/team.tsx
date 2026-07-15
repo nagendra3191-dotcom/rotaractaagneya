@@ -4,16 +4,17 @@ import { Footer } from "@/components/site/Footer";
 import { MemberCard } from "@/components/site/MemberCard";
 import { committee } from "@/data/committee";
 
-export const Route = createFileRoute("/people")({
+export const Route = createFileRoute("/team")({
   head: () => ({
     meta: [
-      { title: "Our Members — Rotaract Bangalore Aagneya" },
-      { name: "description", content: "Meet the members of the Rotaract Club of Bangalore Aagneya — our core committee, directors, and proud Rotaractors of RY 2025–26." },
-      { property: "og:title", content: "Our Members — Rotaract Bangalore Aagneya" },
-      { property: "og:description", content: "Meet the 40+ Rotaractors of Bangalore Aagneya, RID 3191." },
+      { title: "Our Team — Rotaract Bangalore Aagneya" },
+      { name: "description", content: "Meet the 40+ Rotaractors of Bangalore Aagneya — our Core Committee, Directors & Chairs, and Proud Members for RY 2025–26." },
+      { property: "og:title", content: "Our Team — Rotaract Bangalore Aagneya" },
+      { property: "og:description", content: "The people of Aagneya, RID 3191 — RY 2025–26." },
     ],
+    links: [{ rel: "canonical", href: "/team" }],
   }),
-  component: PeoplePage,
+  component: TeamPage,
 });
 
 const core = committee.filter((m) => m.category === "core");
@@ -22,12 +23,12 @@ const members = committee.filter((m) => m.category === "member");
 
 function Section({ eyebrow, title, list }: { eyebrow: string; title: string; list: typeof committee }) {
   return (
-    <section className="py-16">
+    <section className="py-14 sm:py-16">
       <div className="max-w-3xl">
         <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">{eyebrow}</div>
-        <h2 className="font-display text-3xl lg:text-5xl text-primary leading-tight">{title}</h2>
+        <h2 className="font-display text-2xl sm:text-3xl lg:text-5xl text-primary leading-tight">{title}</h2>
       </div>
-      <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="mt-10 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {list.map((m) => (
           <MemberCard key={m.name} member={m} />
         ))}
@@ -36,17 +37,17 @@ function Section({ eyebrow, title, list }: { eyebrow: string; title: string; lis
   );
 }
 
-function PeoplePage() {
+function TeamPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <div className="pt-40 pb-10 bg-hero-gradient text-white">
+      <div className="pt-40 pb-16 bg-hero-gradient text-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">Rotary Year 2025–26</div>
-          <h1 className="font-display text-5xl lg:text-7xl leading-tight max-w-4xl">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl leading-tight max-w-4xl">
             The people of <em className="text-gradient-gold">Aagneya.</em>
           </h1>
-          <p className="mt-6 max-w-2xl text-white/80 text-lg">
+          <p className="mt-6 max-w-2xl text-white/80 text-base sm:text-lg">
             40+ Rotaractors — leaders, learners, and lifelong friends — carrying forward a
             legacy of service under RID 3191.
           </p>
