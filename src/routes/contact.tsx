@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { Mail, Instagram, Linkedin, Facebook, MapPin, Send } from "lucide-react";
+import { Mail, Instagram, Linkedin, MapPin, Send } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -17,10 +17,9 @@ export const Route = createFileRoute("/contact")({
 });
 
 const cards = [
-  { Icon: Mail, label: "Email", value: "rotaractbangaloreaagneya@gmail.com", href: "mailto:rotaractbangaloreaagneya@gmail.com" },
+  { Icon: Mail, label: "Email", value: "rotaractclubofbangaloreaagneya@gmail.com", href: "mailto:rotaractclubofbangaloreaagneya@gmail.com" },
   { Icon: Instagram, label: "Instagram", value: "@rotaractbangaloreaagneya", href: "https://instagram.com/rotaractbangaloreaagneya" },
   { Icon: Linkedin, label: "LinkedIn", value: "Rotaract Bangalore Aagneya", href: "https://www.linkedin.com/company/rotaract-bangalore-aagneya" },
-  { Icon: Facebook, label: "Facebook", value: "Rotaract Bangalore Aagneya", href: "https://facebook.com/rotaractbangaloreaagneya" },
   { Icon: MapPin, label: "Location", value: "Bengaluru, Karnataka, India", href: "#" },
 ];
 

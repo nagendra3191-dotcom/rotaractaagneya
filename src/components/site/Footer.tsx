@@ -1,12 +1,10 @@
-import { Mail, Instagram, Linkedin, Facebook, MapPin } from "lucide-react";
+import { Mail, Instagram, Linkedin, MapPin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import clubLogo from "@/assets/brand/club-logo.jpg.asset.json";
-import f1 from "@/assets/brand/footer-1.jpg.asset.json";
-import f2 from "@/assets/brand/footer-2.jpg.asset.json";
-import f3 from "@/assets/brand/footer-3.jpg.asset.json";
-import f4 from "@/assets/brand/footer-4.jpg.asset.json";
+import clubLockup from "@/assets/brand/club-lockup.png.asset.json";
+import rotaractMark from "@/assets/brand/rotaract-mark.png.asset.json";
+import rotaryMark from "@/assets/brand/rotary-mark.png.asset.json";
 
-const partners = [f1, f2, f3, f4];
+const partners = [rotaractMark, rotaryMark];
 
 export function Footer() {
   return (
@@ -17,15 +15,11 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-2 max-w-md">
-            <div className="flex items-center gap-3">
-              <div className="h-14 w-14 overflow-hidden rounded-full ring-2 ring-gold/50">
-                <img src={clubLogo.url} alt="" className="h-full w-full object-cover" />
-              </div>
-              <div>
-                <div className="font-display text-2xl">Rotaract Bangalore Aagneya</div>
-                <div className="text-xs uppercase tracking-[0.25em] text-gold-soft mt-0.5">
-                  Rotary International District 3191
-                </div>
+            <img src={clubLockup.url} alt="Rotaract Club of Bangalore Aagneya" className="h-16 w-auto object-contain" style={{ filter: "brightness(1.1)" }} />
+            <div className="mt-4">
+              <div className="font-display text-xl">Rotaract Bangalore Aagneya</div>
+              <div className="text-xs uppercase tracking-[0.25em] text-gold-soft mt-1">
+                R.I. District 3191 · Zone Rafale · RY 2026–27
               </div>
             </div>
             <p className="mt-6 text-sm leading-relaxed text-white/70">
@@ -35,8 +29,7 @@ export function Footer() {
             <div className="mt-6 flex gap-3">
               <a href="https://instagram.com/rotaractbangaloreaagneya" target="_blank" rel="noreferrer" aria-label="Instagram" className="h-10 w-10 rounded-full glass flex items-center justify-center hover:bg-gold hover:text-navy-deep transition"><Instagram size={16} /></a>
               <a href="https://www.linkedin.com/company/rotaract-bangalore-aagneya" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="h-10 w-10 rounded-full glass flex items-center justify-center hover:bg-gold hover:text-navy-deep transition"><Linkedin size={16} /></a>
-              <a href="https://facebook.com/rotaractbangaloreaagneya" target="_blank" rel="noreferrer" aria-label="Facebook" className="h-10 w-10 rounded-full glass flex items-center justify-center hover:bg-gold hover:text-navy-deep transition"><Facebook size={16} /></a>
-              <a href="mailto:rotaractbangaloreaagneya@gmail.com" aria-label="Email" className="h-10 w-10 rounded-full glass flex items-center justify-center hover:bg-gold hover:text-navy-deep transition"><Mail size={16} /></a>
+              <a href="mailto:rotaractclubofbangaloreaagneya@gmail.com" aria-label="Email" className="h-10 w-10 rounded-full glass flex items-center justify-center hover:bg-gold hover:text-navy-deep transition"><Mail size={16} /></a>
             </div>
           </div>
 
@@ -48,7 +41,6 @@ export function Footer() {
               <li><Link to="/projects" className="hover:text-gold-soft transition">Projects</Link></li>
               <li><Link to="/awards" className="hover:text-gold-soft transition">Awards</Link></li>
               <li><Link to="/statistics" className="hover:text-gold-soft transition">Statistics</Link></li>
-              <li><Link to="/gallery" className="hover:text-gold-soft transition">Gallery</Link></li>
               <li><Link to="/contact" className="hover:text-gold-soft transition">Contact</Link></li>
             </ul>
           </div>
@@ -62,8 +54,8 @@ export function Footer() {
               </div>
               <div className="flex items-start gap-2">
                 <Mail size={16} className="mt-0.5 text-gold shrink-0" />
-                <a href="mailto:rotaractbangaloreaagneya@gmail.com" className="hover:text-gold-soft transition break-all">
-                  rotaractbangaloreaagneya@gmail.com
+                <a href="mailto:rotaractclubofbangaloreaagneya@gmail.com" className="hover:text-gold-soft transition break-all">
+                  rotaractclubofbangaloreaagneya@gmail.com
                 </a>
               </div>
             </div>
@@ -74,14 +66,14 @@ export function Footer() {
           <div className="text-center text-xs uppercase tracking-[0.3em] text-gold-soft mb-6">
             In Partnership With
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+          <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-16">
             {partners.map((logo, i) => (
               <img
                 key={i}
                 src={logo.url}
                 alt="Partner logo"
-                className="h-14 sm:h-16 w-auto object-contain"
-                style={{ mixBlendMode: "screen", filter: "brightness(1.15) contrast(1.05)" }}
+                className="h-16 sm:h-20 w-auto object-contain"
+                style={{ filter: "brightness(1.15)" }}
               />
             ))}
           </div>
