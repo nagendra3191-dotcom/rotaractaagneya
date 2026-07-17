@@ -52,8 +52,8 @@ function AboutPage() {
                 <img src={heroImg.url} alt="" className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 to-transparent" />
               </div>
-              <div className="absolute -bottom-8 -right-8 w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-hero-gradient shadow-gold-glow flex items-center justify-center">
-                <img src={clubLogo.url} alt="" className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover ring-2 ring-gold/60" />
+              <div className="absolute -bottom-8 -right-8 rounded-2xl bg-navy-deep/95 backdrop-blur-md shadow-gold-glow ring-1 ring-gold/40 px-5 py-4">
+                <img src={clubLogo.url} alt="Club logo" className="h-16 sm:h-20 w-auto object-contain" style={{ filter: "brightness(1.15)" }} />
               </div>
             </div>
           </div>
