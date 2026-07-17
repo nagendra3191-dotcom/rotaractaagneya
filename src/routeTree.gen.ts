@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as StatisticsRouteImport } from './routes/statistics'
 import { Route as ProjectsRouteImport } from './routes/projects'
-import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AwardsRouteImport } from './routes/awards'
 import { Route as AboutRouteImport } from './routes/about'
@@ -31,11 +30,6 @@ const StatisticsRoute = StatisticsRouteImport.update({
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -64,7 +58,6 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/awards': typeof AwardsRoute
   '/contact': typeof ContactRoute
-  '/gallery': typeof GalleryRoute
   '/projects': typeof ProjectsRoute
   '/statistics': typeof StatisticsRoute
   '/team': typeof TeamRoute
@@ -74,7 +67,6 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/awards': typeof AwardsRoute
   '/contact': typeof ContactRoute
-  '/gallery': typeof GalleryRoute
   '/projects': typeof ProjectsRoute
   '/statistics': typeof StatisticsRoute
   '/team': typeof TeamRoute
@@ -85,7 +77,6 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/awards': typeof AwardsRoute
   '/contact': typeof ContactRoute
-  '/gallery': typeof GalleryRoute
   '/projects': typeof ProjectsRoute
   '/statistics': typeof StatisticsRoute
   '/team': typeof TeamRoute
@@ -97,7 +88,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/awards'
     | '/contact'
-    | '/gallery'
     | '/projects'
     | '/statistics'
     | '/team'
@@ -107,7 +97,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/awards'
     | '/contact'
-    | '/gallery'
     | '/projects'
     | '/statistics'
     | '/team'
@@ -117,7 +106,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/awards'
     | '/contact'
-    | '/gallery'
     | '/projects'
     | '/statistics'
     | '/team'
@@ -128,7 +116,6 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AwardsRoute: typeof AwardsRoute
   ContactRoute: typeof ContactRoute
-  GalleryRoute: typeof GalleryRoute
   ProjectsRoute: typeof ProjectsRoute
   StatisticsRoute: typeof StatisticsRoute
   TeamRoute: typeof TeamRoute
@@ -155,13 +142,6 @@ declare module '@tanstack/react-router' {
       path: '/projects'
       fullPath: '/projects'
       preLoaderRoute: typeof ProjectsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -200,7 +180,6 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AwardsRoute: AwardsRoute,
   ContactRoute: ContactRoute,
-  GalleryRoute: GalleryRoute,
   ProjectsRoute: ProjectsRoute,
   StatisticsRoute: StatisticsRoute,
   TeamRoute: TeamRoute,

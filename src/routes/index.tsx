@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Award, Sparkles, Quote, Instagram, Linkedin, Facebook, Mail } from "lucide-react";
+import { ArrowRight, Award, Sparkles, Quote, Instagram, Linkedin, Mail, Plane } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { MemberCard } from "@/components/site/MemberCard";
+import { committee } from "@/data/committee";
 import heroImg from "@/assets/brand/hero-new.jpg.asset.json";
 import awardsImg from "@/assets/brand/awards.jpg.asset.json";
 
@@ -12,9 +14,9 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "The Rotaract Club of Bangalore Aagneya (RID 3191) — igniting leadership, inspiring change, and building lasting impact through service, fellowship, and international understanding.",
+          "The Rotaract Club of Bangalore Aagneya (RID 3191, Zone Rafale) — igniting leadership, inspiring change, and building lasting impact in Rotary Year 2026–27.",
       },
-      { property: "og:title", content: "Rotaract Bangalore Aagneya" },
+      { property: "og:title", content: "Rotaract Bangalore Aagneya · RY 2026–27" },
       { property: "og:description", content: "Igniting Leadership. Inspiring Change. Building Aagneya Together." },
       { property: "og:image", content: heroImg.url },
       { name: "twitter:image", content: heroImg.url },
@@ -44,6 +46,8 @@ const featuredAwards = [
   "Royal Rotaract Male — Rtr. Vikram A Murthy",
 ];
 
+const president = committee.find((m) => m.role === "President")!;
+
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -62,9 +66,9 @@ function Home() {
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10 pb-28 pt-40 w-full">
           <div className="max-w-3xl animate-fade-in">
             <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 mb-8">
-              <Sparkles size={14} className="text-gold" />
+              <Plane size={14} className="text-gold" />
               <span className="text-xs uppercase tracking-[0.25em] text-white/90">
-                Rotary Year 2025–26
+                Rotary Year 2026–27 · Zone Rafale
               </span>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-white leading-[1.05]">
@@ -103,6 +107,48 @@ function Home() {
                 <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-white/70 mt-1 px-2">{s.l}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PRESIDENT'S MESSAGE */}
+      <section className="py-24 lg:py-32 relative overflow-hidden bg-secondary/30">
+        <div className="absolute -left-32 -top-24 w-[600px] h-[600px] rounded-full bg-gold/5 blur-3xl" />
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-5">
+            <div className="relative max-w-sm mx-auto lg:mx-0">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-elegant ring-1 ring-gold/25">
+                <MemberCard member={president} featured />
+              </div>
+              <div className="absolute -bottom-6 -right-6 rounded-2xl bg-gold-gradient px-5 py-4 shadow-gold-glow">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-navy-deep/80">President</div>
+                <div className="font-display text-lg text-navy-deep leading-tight">RY 2026–27</div>
+              </div>
+            </div>
+          </div>
+          <div className="lg:col-span-7">
+            <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">President's Message</div>
+            <Quote className="text-gold/30 mb-4" size={48} />
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary leading-tight">
+              A year of <em className="text-gradient-gold">flight, fire, and fellowship.</em>
+            </h2>
+            <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
+              As we step into Rotary Year <strong className="text-primary">2026–27</strong> under Zone Rafale, I invite every
+              Rotaractor, partner, and friend of Aagneya to soar higher with us. Our club has
+              always drawn strength from its fire — <em>Aagneya</em>, born of fire — and this year we
+              channel that same energy into bolder service, deeper fellowship, and sharper leadership.
+            </p>
+            <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+              Together, we will honour the legacy of every past board, celebrate the courage of every
+              member, and light the runway for those who come after us. Thank you for believing in Aagneya.
+            </p>
+            <div className="mt-8 flex items-center gap-4">
+              <div className="h-px flex-1 bg-gradient-to-r from-gold/60 to-transparent" />
+              <div>
+                <div className="font-display text-xl text-primary">{president.name}</div>
+                <div className="text-xs uppercase tracking-[0.25em] text-gold">President · RY 2026–27</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -164,20 +210,37 @@ function Home() {
         </div>
       </section>
 
-      {/* STATISTICS PREVIEW */}
-      <section className="py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      {/* STATISTICS PREVIEW — Aviation themed */}
+      <section className="py-24 lg:py-32 relative overflow-hidden bg-navy-deep text-white">
+        {/* Aviation ornament: contrails + fighter silhouette */}
+        <svg className="absolute inset-0 w-full h-full opacity-[0.08]" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden>
+          <defs>
+            <linearGradient id="contrail" x1="0" x2="1">
+              <stop offset="0" stopColor="#E4B85C" stopOpacity="0" />
+              <stop offset="0.5" stopColor="#E4B85C" stopOpacity="1" />
+              <stop offset="1" stopColor="#E4B85C" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <path d="M-50 700 Q 400 300 1250 100" stroke="url(#contrail)" strokeWidth="1.5" fill="none" />
+          <path d="M-50 780 Q 500 500 1250 250" stroke="url(#contrail)" strokeWidth="1" fill="none" />
+          <path d="M-50 620 Q 300 200 1250 -50" stroke="url(#contrail)" strokeWidth="0.8" fill="none" />
+        </svg>
+        <Plane className="absolute top-16 right-16 text-gold/20" size={140} strokeWidth={0.8} style={{ transform: "rotate(-35deg)" }} />
+        <Plane className="absolute bottom-20 left-10 text-gold/10" size={80} strokeWidth={0.8} style={{ transform: "rotate(-25deg)" }} />
+
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">By the Numbers</div>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary leading-tight">
+              <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">By the Numbers · Zone Rafale</div>
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight">
                 Impact you can <em className="text-gradient-gold">measure.</em>
               </h2>
-              <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
+              <p className="mt-6 text-white/75 text-lg leading-relaxed">
                 138 projects across six avenues in Rotary Year 2025–26 — from grassroots
                 community service to professional development and international collaboration.
+                A launchpad for what's to come in RY 2026–27.
               </p>
-              <Link to="/statistics" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground hover:bg-navy-deep transition">
+              <Link to="/statistics" className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold-gradient px-7 py-3.5 text-sm font-medium text-navy-deep shadow-gold-glow hover:brightness-110 transition">
                 View Full Statistics <ArrowRight size={16} />
               </Link>
             </div>
@@ -190,9 +253,9 @@ function Home() {
                 { n: "15", l: "International" },
                 { n: "6", l: "Professional Dev." },
               ].map((s) => (
-                <div key={s.l} className="rounded-2xl bg-secondary/50 p-6 border border-border hover:shadow-elegant transition">
+                <div key={s.l} className="rounded-2xl glass p-6 hover:bg-white/10 transition">
                   <div className="font-display text-4xl text-gradient-gold">{s.n}</div>
-                  <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground mt-2">{s.l}</div>
+                  <div className="text-xs uppercase tracking-[0.15em] text-white/70 mt-2">{s.l}</div>
                 </div>
               ))}
             </div>
@@ -230,7 +293,7 @@ function Home() {
         </div>
       </section>
 
-      {/* QUOTE / CTA */}
+      {/* QUOTE */}
       <section className="py-24 lg:py-32 bg-navy-deep text-white relative overflow-hidden">
         <Quote className="absolute top-10 left-1/2 -translate-x-1/2 text-gold/10" size={200} />
         <div className="relative mx-auto max-w-4xl px-6 text-center">
@@ -246,7 +309,7 @@ function Home() {
         </div>
       </section>
 
-      {/* SOCIAL + CONTACT PREVIEW */}
+      {/* SOCIAL PREVIEW */}
       <section className="py-20">
         <div className="mx-auto max-w-5xl px-6 lg:px-10 text-center">
           <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Stay Connected</div>
@@ -257,8 +320,7 @@ function Home() {
             {[
               { Icon: Instagram, label: "Instagram", href: "https://instagram.com/rotaractbangaloreaagneya" },
               { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/rotaract-bangalore-aagneya" },
-              { Icon: Facebook, label: "Facebook", href: "https://facebook.com/rotaractbangaloreaagneya" },
-              { Icon: Mail, label: "Email", href: "mailto:rotaractbangaloreaagneya@gmail.com" },
+              { Icon: Mail, label: "Email", href: "mailto:rotaractclubofbangaloreaagneya@gmail.com" },
             ].map(({ Icon, label, href }) => (
               <a
                 key={label}

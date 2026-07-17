@@ -3,7 +3,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Heart, Users, Award, Globe2, Flame, Target, Eye, CheckCircle2, ArrowRight } from "lucide-react";
 import heroImg from "@/assets/brand/hero-new.jpg.asset.json";
-import clubLogo from "@/assets/brand/club-logo.jpg.asset.json";
+import clubLogo from "@/assets/brand/club-lockup.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
