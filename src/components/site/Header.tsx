@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import clubLogo from "@/assets/brand/club-logo.jpg.asset.json";
+import clubLockup from "@/assets/brand/club-lockup.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -10,7 +10,6 @@ const nav = [
   { to: "/projects", label: "Projects" },
   { to: "/awards", label: "Awards" },
   { to: "/statistics", label: "Statistics" },
-  { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -38,14 +37,17 @@ export function Header() {
           : "bg-navy-deep/40 backdrop-blur-md py-4"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-10">
-        <Link to="/" className="flex items-center gap-3 group shrink-0">
-          <div className="h-11 w-11 overflow-hidden rounded-full ring-2 ring-gold/60 shadow-gold-glow transition-transform group-hover:scale-105">
-            <img src={clubLogo.url} alt="Rotaract Bangalore Aagneya" className="h-full w-full object-cover" />
-          </div>
-          <div className="leading-tight">
-            <div className="font-display text-lg text-white tracking-wide">Aagneya</div>
-            <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft">Rotaract · RID 3191</div>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-10 gap-4">
+        <Link to="/" className="flex items-center gap-3 group shrink-0 min-w-0">
+          <img
+            src={clubLockup.url}
+            alt="Rotaract Club of Bangalore Aagneya"
+            className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+            style={{ filter: "brightness(1.1)" }}
+          />
+          <div className="leading-tight hidden sm:block">
+            <div className="font-display text-base text-white tracking-wide truncate">R.I. District 3191</div>
+            <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft">Zone Rafale · RY 2026–27</div>
           </div>
         </Link>
 

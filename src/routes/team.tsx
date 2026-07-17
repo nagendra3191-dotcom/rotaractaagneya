@@ -8,9 +8,9 @@ export const Route = createFileRoute("/team")({
   head: () => ({
     meta: [
       { title: "Our Team — Rotaract Bangalore Aagneya" },
-      { name: "description", content: "Meet the 40+ Rotaractors of Bangalore Aagneya — our Core Committee, Directors & Chairs, and Proud Members for RY 2025–26." },
+      { name: "description", content: "Meet the 40+ Rotaractors of Bangalore Aagneya — our Core Committee, Directors & Chairs, and Proud Members for RY 2026–27." },
       { property: "og:title", content: "Our Team — Rotaract Bangalore Aagneya" },
-      { property: "og:description", content: "The people of Aagneya, RID 3191 — RY 2025–26." },
+      { property: "og:description", content: "The people of Aagneya, RID 3191 — RY 2026–27." },
     ],
     links: [{ rel: "canonical", href: "/team" }],
   }),
@@ -43,7 +43,7 @@ function TeamPage() {
       <Header />
       <div className="pt-40 pb-16 bg-hero-gradient text-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">Rotary Year 2025–26</div>
+          <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">Rotary Year 2026–27 · Zone Rafale</div>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl leading-tight max-w-4xl">
             The people of <em className="text-gradient-gold">Aagneya.</em>
           </h1>
