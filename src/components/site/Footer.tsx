@@ -49,10 +49,6 @@ export function Footer() {
             <div className="text-xs uppercase tracking-[0.25em] text-gold-soft mb-4">Reach Us</div>
             <div className="space-y-3 text-sm text-white/75">
               <div className="flex items-start gap-2">
-                <MapPin size={16} className="mt-0.5 text-gold shrink-0" />
-                <span>Bengaluru, Karnataka, India</span>
-              </div>
-              <div className="flex items-start gap-2">
                 <Mail size={16} className="mt-0.5 text-gold shrink-0" />
                 <a href="mailto:rotaractclubofbangaloreaagneya@gmail.com" className="hover:text-gold-soft transition break-all">
                   rotaractclubofbangaloreaagneya@gmail.com
