@@ -19,7 +19,7 @@ export const Route = createFileRoute("/awards")({
 });
 
 const marquee = [
-  "Outstanding President — Rtr. Hitha Suresh",
+  "Outstanding President — IPP. Rtr. Hitha Suresh",
   "Par Excellence — Community Based Club",
   "DRR Royal Citation",
 ];
