@@ -42,7 +42,7 @@ export function Header() {
           <img
             src={clubLockup.url}
             alt="Rotaract Club of Bangalore Aagneya"
-            className="h-14 sm:h-16 lg:h-[72px] w-auto object-contain transition-transform group-hover:scale-105"
+            className="h-16 sm:h-20 lg:h-24 w-auto object-contain transition-transform group-hover:scale-105"
             style={{ filter: "brightness(1.1)" }}
           />
           <div className="leading-tight hidden sm:block">
