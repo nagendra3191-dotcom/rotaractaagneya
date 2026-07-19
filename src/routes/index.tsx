@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "The Rotaract Club of Bangalore Aagneya (RID 3191, Zone Rafale) — igniting leadership, inspiring change, and building lasting impact in Rotary Year 2026–27.",
+          "The Rotaract Club of Bangalore Aagneya (RID 3191) — igniting leadership, inspiring change, and building lasting impact in Rotary Year 2026–27.",
       },
       { property: "og:title", content: "Rotaract Bangalore Aagneya · RY 2026–27" },
       { property: "og:description", content: "Igniting Leadership. Inspiring Change. Building Aagneya Together." },
