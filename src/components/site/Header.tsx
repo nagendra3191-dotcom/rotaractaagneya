@@ -42,12 +42,12 @@ export function Header() {
           <img
             src={clubLockup.url}
             alt="Rotaract Club of Bangalore Aagneya"
-            className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+            className="h-14 sm:h-16 lg:h-[72px] w-auto object-contain transition-transform group-hover:scale-105"
             style={{ filter: "brightness(1.1)" }}
           />
           <div className="leading-tight hidden sm:block">
-            <div className="font-display text-base text-white tracking-wide truncate">R.I. District 3191</div>
-            <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft">Zone Rafale · RY 2026–27</div>
+            <div className="font-display text-base lg:text-lg text-white tracking-wide truncate">Rotaract Club of Bangalore Aagneya</div>
+            <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft">R.I. District 3191 · RY 2026–27</div>
           </div>
         </Link>
 
