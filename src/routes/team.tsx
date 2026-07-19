@@ -43,7 +43,7 @@ function TeamPage() {
       <Header />
       <div className="pt-40 pb-16 bg-hero-gradient text-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">Rotary Year 2026–27 · Zone Rafale</div>
+          <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">Rotary Year 2026–27</div>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl leading-tight max-w-4xl">
             The people of <em className="text-gradient-gold">Aagneya.</em>
           </h1>

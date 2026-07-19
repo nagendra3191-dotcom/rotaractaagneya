@@ -1,4 +1,4 @@
-import { Mail, Instagram, Linkedin, MapPin } from "lucide-react";
+import { Mail, Instagram, Linkedin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import clubLockup from "@/assets/brand/club-lockup.png.asset.json";
 import rotaractMark from "@/assets/brand/rotaract-mark.png.asset.json";
@@ -19,7 +19,7 @@ export function Footer() {
             <div className="mt-4">
               <div className="font-display text-xl">Rotaract Bangalore Aagneya</div>
               <div className="text-xs uppercase tracking-[0.25em] text-gold-soft mt-1">
-                R.I. District 3191 · Zone Rafale · RY 2026–27
+                R.I. District 3191 · RY 2026–27
               </div>
             </div>
             <p className="mt-6 text-sm leading-relaxed text-white/70">
@@ -48,10 +48,6 @@ export function Footer() {
           <div>
             <div className="text-xs uppercase tracking-[0.25em] text-gold-soft mb-4">Reach Us</div>
             <div className="space-y-3 text-sm text-white/75">
-              <div className="flex items-start gap-2">
-                <MapPin size={16} className="mt-0.5 text-gold shrink-0" />
-                <span>Bengaluru, Karnataka, India</span>
-              </div>
               <div className="flex items-start gap-2">
                 <Mail size={16} className="mt-0.5 text-gold shrink-0" />
                 <a href="mailto:rotaractclubofbangaloreaagneya@gmail.com" className="hover:text-gold-soft transition break-all">

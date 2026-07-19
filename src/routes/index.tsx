@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "The Rotaract Club of Bangalore Aagneya (RID 3191, Zone Rafale) — igniting leadership, inspiring change, and building lasting impact in Rotary Year 2026–27.",
+          "The Rotaract Club of Bangalore Aagneya (RID 3191) — igniting leadership, inspiring change, and building lasting impact in Rotary Year 2026–27.",
       },
       { property: "og:title", content: "Rotaract Bangalore Aagneya · RY 2026–27" },
       { property: "og:description", content: "Igniting Leadership. Inspiring Change. Building Aagneya Together." },
@@ -68,7 +68,7 @@ function Home() {
             <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 mb-8">
               <Plane size={14} className="text-gold" />
               <span className="text-xs uppercase tracking-[0.25em] text-white/90">
-                Rotary Year 2026–27 · Zone Rafale
+                Rotary Year 2026–27
               </span>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-white leading-[1.05]">
@@ -133,7 +133,7 @@ function Home() {
               A year of <em className="text-gradient-gold">flight, fire, and fellowship.</em>
             </h2>
             <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
-              As we step into Rotary Year <strong className="text-primary">2026–27</strong> under Zone Rafale, I invite every
+              As we step into Rotary Year <strong className="text-primary">2026–27</strong>, I invite every
               Rotaractor, partner, and friend of Aagneya to soar higher with us. Our club has
               always drawn strength from its fire — <em>Aagneya</em>, born of fire — and this year we
               channel that same energy into bolder service, deeper fellowship, and sharper leadership.
@@ -231,7 +231,7 @@ function Home() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">By the Numbers · Zone Rafale</div>
+              <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">By the Numbers</div>
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight">
                 Impact you can <em className="text-gradient-gold">measure.</em>
               </h2>
