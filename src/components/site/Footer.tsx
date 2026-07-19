@@ -19,7 +19,7 @@ export function Footer() {
             <div className="mt-4">
               <div className="font-display text-xl">Rotaract Bangalore Aagneya</div>
               <div className="text-xs uppercase tracking-[0.25em] text-gold-soft mt-1">
-                R.I. District 3191 · Zone Rafale · RY 2026–27
+                R.I. District 3191 · RY 2026–27
               </div>
             </div>
             <p className="mt-6 text-sm leading-relaxed text-white/70">
