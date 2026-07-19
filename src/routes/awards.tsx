@@ -43,6 +43,8 @@ const execRecognitions = [
   "PP. Rtn. Rtr. Nagendra Babu",
   "Rtr. Farheen Taj",
   "Rtr. Manish",
+  "PP. Rtr. Vishal S",
+  "Rtr. Ishita Poddar",
 ];
 
 const areaFocus = [
