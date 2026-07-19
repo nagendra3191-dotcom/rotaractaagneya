@@ -231,7 +231,7 @@ function Home() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">By the Numbers · Zone Rafale</div>
+              <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">By the Numbers</div>
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight">
                 Impact you can <em className="text-gradient-gold">measure.</em>
               </h2>
