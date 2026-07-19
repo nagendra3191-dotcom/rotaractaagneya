@@ -68,7 +68,7 @@ function Home() {
             <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 mb-8">
               <Plane size={14} className="text-gold" />
               <span className="text-xs uppercase tracking-[0.25em] text-white/90">
-                Rotary Year 2026–27 · Zone Rafale
+                Rotary Year 2026–27
               </span>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-white leading-[1.05]">
