@@ -1,4 +1,4 @@
-import { Mail, Instagram, Linkedin, MapPin } from "lucide-react";
+import { Mail, Instagram, Linkedin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import clubLockup from "@/assets/brand/club-lockup.png.asset.json";
 import rotaractMark from "@/assets/brand/rotaract-mark.png.asset.json";
