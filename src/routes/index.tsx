@@ -133,7 +133,7 @@ function Home() {
               A year of <em className="text-gradient-gold">flight, fire, and fellowship.</em>
             </h2>
             <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
-              As we step into Rotary Year <strong className="text-primary">2026–27</strong> under Zone Rafale, I invite every
+              As we step into Rotary Year <strong className="text-primary">2026–27</strong>, I invite every
               Rotaractor, partner, and friend of Aagneya to soar higher with us. Our club has
               always drawn strength from its fire — <em>Aagneya</em>, born of fire — and this year we
               channel that same energy into bolder service, deeper fellowship, and sharper leadership.
