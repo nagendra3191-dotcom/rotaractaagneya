@@ -88,7 +88,7 @@ function AwardsPage() {
           </h1>
           <p className="mt-6 max-w-3xl text-white/80 text-base sm:text-lg leading-relaxed">
             On behalf of the Rotary Club of Bangalore Aagneya, we extend our heartfelt
-            congratulations to Rtr. Hitha Suresh and the entire Rotaract Club of Bangalore
+            congratulations to IPP. Rtr. Hitha Suresh and the entire Rotaract Club of Bangalore
             Aagneya for an extraordinary performance at the Royal Rotaract Recognition — a
             reflection of visionary leadership, unwavering commitment, and a shared passion
             for <em className="text-gold-soft not-italic">Service Above Self</em>.
