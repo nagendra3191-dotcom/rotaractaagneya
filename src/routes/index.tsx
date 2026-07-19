@@ -40,7 +40,7 @@ const highlights = [
 ];
 
 const featuredAwards = [
-  "Outstanding President — Rtr. Hitha Suresh",
+  "Outstanding President — IPP. Rtr. Hitha Suresh",
   "Par Excellence — Community Based Club",
   "DRR Royal Citation",
   "Royal Rotaract Male — Rtr. Vikram A Murthy",
