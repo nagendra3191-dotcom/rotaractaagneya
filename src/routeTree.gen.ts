@@ -13,6 +13,7 @@ import { Route as TeamRouteImport } from './routes/team'
 import { Route as StatisticsRouteImport } from './routes/statistics'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BloodDonationRouteImport } from './routes/blood-donation'
 import { Route as AwardsRouteImport } from './routes/awards'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -37,6 +38,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BloodDonationRoute = BloodDonationRouteImport.update({
+  id: '/blood-donation',
+  path: '/blood-donation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AwardsRoute = AwardsRouteImport.update({
   id: '/awards',
   path: '/awards',
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/awards': typeof AwardsRoute
+  '/blood-donation': typeof BloodDonationRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/statistics': typeof StatisticsRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/awards': typeof AwardsRoute
+  '/blood-donation': typeof BloodDonationRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/statistics': typeof StatisticsRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/awards': typeof AwardsRoute
+  '/blood-donation': typeof BloodDonationRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/statistics': typeof StatisticsRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/awards'
+    | '/blood-donation'
     | '/contact'
     | '/projects'
     | '/statistics'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/awards'
+    | '/blood-donation'
     | '/contact'
     | '/projects'
     | '/statistics'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/awards'
+    | '/blood-donation'
     | '/contact'
     | '/projects'
     | '/statistics'
@@ -115,6 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AwardsRoute: typeof AwardsRoute
+  BloodDonationRoute: typeof BloodDonationRoute
   ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRoute
   StatisticsRoute: typeof StatisticsRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blood-donation': {
+      id: '/blood-donation'
+      path: '/blood-donation'
+      fullPath: '/blood-donation'
+      preLoaderRoute: typeof BloodDonationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/awards': {
       id: '/awards'
       path: '/awards'
@@ -179,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AwardsRoute: AwardsRoute,
+  BloodDonationRoute: BloodDonationRoute,
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRoute,
   StatisticsRoute: StatisticsRoute,

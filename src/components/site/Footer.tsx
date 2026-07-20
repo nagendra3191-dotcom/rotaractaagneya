@@ -46,16 +46,31 @@ export function Footer() {
           </div>
 
           <div>
-            <div className="text-xs uppercase tracking-[0.25em] text-gold-soft mb-4">Reach Us</div>
-            <div className="space-y-3 text-sm text-white/75">
-              <div className="flex items-start gap-2">
-                <Mail size={16} className="mt-0.5 text-gold shrink-0" />
-                <a href="mailto:rotaractclubofbangaloreaagneya@gmail.com" className="hover:text-gold-soft transition break-all">
-                  rotaractclubofbangaloreaagneya@gmail.com
+            <div className="text-xs uppercase tracking-[0.25em] text-gold-soft mb-4">Official Links</div>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <a href="https://www.rotary.org" target="_blank" rel="noreferrer" className="hover:text-gold-soft transition">
+                  Rotary International
                 </a>
-              </div>
-            </div>
+              </li>
+              <li>
+                <a href="https://my.rotary.org/en/learning-reference/learn-topic/rotaract" target="_blank" rel="noreferrer" className="hover:text-gold-soft transition">
+                  Rotary Learning Center
+                </a>
+              </li>
+              <li>
+                <a href="https://www.rotaract3191.org" target="_blank" rel="noreferrer" className="hover:text-gold-soft transition">
+                  Rotaract District 3191
+                </a>
+              </li>
+              <li>
+                <a href="mailto:rotaractclubofbangaloreaagneya@gmail.com" className="hover:text-gold-soft transition break-all">
+                  Email Us
+                </a>
+              </li>
+            </ul>
           </div>
+
         </div>
 
         <div className="mt-16 pt-10 border-t border-white/10">

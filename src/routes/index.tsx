@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Award, Sparkles, Quote, Instagram, Linkedin, Mail, Plane } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { GroupCarousel } from "@/components/site/GroupCarousel";
+
 import { MemberCard } from "@/components/site/MemberCard";
 import { committee } from "@/data/committee";
 import heroImg from "@/assets/brand/hero-new.jpg.asset.json";
@@ -111,47 +113,62 @@ function Home() {
         </div>
       </section>
 
-      {/* PRESIDENT'S MESSAGE */}
-      <section className="py-24 lg:py-32 relative overflow-hidden bg-secondary/30">
-        <div className="absolute -left-32 -top-24 w-[600px] h-[600px] rounded-full bg-gold/5 blur-3xl" />
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <div className="lg:col-span-5">
-            <div className="relative max-w-sm mx-auto lg:mx-0">
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-elegant ring-1 ring-gold/25">
-                <MemberCard member={president} featured />
+      <GroupCarousel />
+
+      {/* PRESIDENT'S MESSAGE — Premium glass */}
+      <section className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-navy-deep via-primary to-navy-deep text-white">
+        <div className="absolute -left-40 -top-40 w-[700px] h-[700px] rounded-full bg-gold/10 blur-3xl" />
+        <div className="absolute -right-40 -bottom-40 w-[600px] h-[600px] rounded-full bg-gold/5 blur-3xl" />
+        <Quote className="absolute top-10 left-8 text-gold/10 hidden lg:block" size={160} />
+        <Quote className="absolute bottom-10 right-8 text-gold/10 rotate-180 hidden lg:block" size={160} />
+
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="glass rounded-[2rem] p-8 sm:p-12 lg:p-16 ring-1 ring-gold/25 shadow-elegant">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              <div className="lg:col-span-5">
+                <div className="relative max-w-sm mx-auto lg:mx-0">
+                  <div className="absolute -inset-4 rounded-[2rem] bg-gold-gradient opacity-30 blur-2xl" />
+                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-elegant ring-2 ring-gold/40">
+                    <MemberCard member={president} featured />
+                  </div>
+                  <div className="absolute -bottom-6 -right-6 rounded-2xl bg-gold-gradient px-5 py-4 shadow-gold-glow">
+                    <div className="text-[10px] uppercase tracking-[0.25em] text-navy-deep/80">President</div>
+                    <div className="font-display text-lg text-navy-deep leading-tight">RY 2026–27</div>
+                  </div>
+                </div>
               </div>
-              <div className="absolute -bottom-6 -right-6 rounded-2xl bg-gold-gradient px-5 py-4 shadow-gold-glow">
-                <div className="text-[10px] uppercase tracking-[0.25em] text-navy-deep/80">President</div>
-                <div className="font-display text-lg text-navy-deep leading-tight">RY 2026–27</div>
-              </div>
-            </div>
-          </div>
-          <div className="lg:col-span-7">
-            <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">President's Message</div>
-            <Quote className="text-gold/30 mb-4" size={48} />
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary leading-tight">
-              A year of <em className="text-gradient-gold">flight, fire, and fellowship.</em>
-            </h2>
-            <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
-              As we step into Rotary Year <strong className="text-primary">2026–27</strong>, I invite every
-              Rotaractor, partner, and friend of Aagneya to soar higher with us. Our club has
-              always drawn strength from its fire — <em>Aagneya</em>, born of fire — and this year we
-              channel that same energy into bolder service, deeper fellowship, and sharper leadership.
-            </p>
-            <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Together, we will honour the legacy of every past board, celebrate the courage of every
-              member, and light the runway for those who come after us. Thank you for believing in Aagneya.
-            </p>
-            <div className="mt-8 flex items-center gap-4">
-              <div className="h-px flex-1 bg-gradient-to-r from-gold/60 to-transparent" />
-              <div>
-                <div className="font-display text-xl text-primary">{president.name}</div>
-                <div className="text-xs uppercase tracking-[0.25em] text-gold">President · RY 2026–27</div>
+              <div className="lg:col-span-7">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-4 py-1.5 mb-6 border border-white/20">
+                  <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-gold-soft">President's Message</span>
+                </div>
+                <Quote className="text-gold/40 mb-4" size={56} />
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight">
+                  A year of <em className="text-gradient-gold">flight, fire, and fellowship.</em>
+                </h2>
+                <p className="mt-6 text-base sm:text-lg text-white/85 leading-relaxed">
+                  As we step into Rotary Year <strong className="text-gold-soft">2026–27</strong>, I invite every
+                  Rotaractor, partner, and friend of Aagneya to soar higher with us. Our club has
+                  always drawn strength from its fire — <em>Aagneya</em>, born of fire — and this year we
+                  channel that same energy into bolder service, deeper fellowship, and sharper leadership.
+                </p>
+                <p className="mt-4 text-base sm:text-lg text-white/85 leading-relaxed">
+                  Together, we will honour the legacy of every past board, celebrate the courage of every
+                  member, and light the runway for those who come after us. Thank you for believing in Aagneya.
+                </p>
+                <div className="mt-8 flex items-center gap-4">
+                  <div className="h-px flex-1 bg-gradient-to-r from-gold/60 to-transparent" />
+                  <div className="text-right">
+                    <div className="font-display text-xl text-white">{president.name}</div>
+                    <div className="text-xs uppercase tracking-[0.25em] text-gold-soft">President · RY 2026–27</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* ABOUT (short) */}
       <section className="py-24 lg:py-32 relative overflow-hidden">
