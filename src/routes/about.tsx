@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { Heart, Users, Award, Globe2, Flame, Target, Eye, CheckCircle2, ArrowRight } from "lucide-react";
+import { Heart, Users, Award, Globe2, Flame, Target, Eye, CheckCircle2, ArrowRight, Megaphone, Sparkles } from "lucide-react";
 import heroImg from "@/assets/brand/hero-new.jpg.asset.json";
 import clubLogo from "@/assets/brand/club-lockup.png.asset.json";
 
@@ -23,7 +23,10 @@ const pillars = [
   { icon: Users, title: "Club Service", body: "A vibrant fellowship where friendships and future leaders are forged." },
   { icon: Award, title: "Professional Development", body: "Skills, mentorship, and networks that accelerate careers with purpose." },
   { icon: Globe2, title: "International Service", body: "Cross-cultural collaboration with Rotaract clubs around the world." },
+  { icon: Megaphone, title: "Public Image", body: "Storytelling that amplifies our impact and inspires the next generation of leaders." },
+  { icon: Sparkles, title: "Next Gen Service", body: "Nurturing school and college communities through Interact and mentorship pipelines." },
 ];
+
 
 function AboutPage() {
   return (
@@ -116,13 +119,14 @@ function AboutPage() {
       <section className="py-24 bg-hero-gradient text-white relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="max-w-2xl">
-            <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">Four Avenues of Service</div>
+            <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">Six Avenues of Service</div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight">
               How we <em className="text-gradient-gold">create impact.</em>
             </h2>
           </div>
-          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {pillars.map((p) => (
+
               <div key={p.title} className="group glass rounded-2xl p-7 hover:bg-white/10 transition-all duration-500 hover:-translate-y-1">
                 <div className="h-14 w-14 rounded-xl bg-gold-gradient flex items-center justify-center text-navy-deep shadow-gold-glow group-hover:scale-110 transition">
                   <p.icon size={22} />
