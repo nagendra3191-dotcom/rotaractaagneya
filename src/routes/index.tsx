@@ -102,14 +102,20 @@ function Home() {
         </div>
 
         <div className="absolute bottom-0 inset-x-0 z-10 border-t border-white/10 backdrop-blur-md bg-navy-deep/50">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
-            {stats.map((s) => (
-              <div key={s.l} className="py-5 sm:py-6 text-center">
-                <div className="font-display text-2xl sm:text-3xl lg:text-4xl text-gradient-gold">{s.n}</div>
-                <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-white/70 mt-1 px-2">{s.l}</div>
-              </div>
-            ))}
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+            <div className="pt-3 pb-1 text-center text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-gold-soft/90">
+              Rotary Year 2025–2026
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
+              {stats.map((s) => (
+                <div key={s.l} className="py-4 sm:py-5 text-center">
+                  <div className="font-display text-2xl sm:text-3xl lg:text-4xl text-gradient-gold">{s.n}</div>
+                  <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-white/70 mt-1 px-2">{s.l}</div>
+                </div>
+              ))}
+            </div>
           </div>
+
         </div>
       </section>
 
@@ -336,7 +342,7 @@ function Home() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             {[
               { Icon: Instagram, label: "Instagram", href: "https://instagram.com/rotaractbangaloreaagneya" },
-              { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/rotaract-bangalore-aagneya" },
+              { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/posts/rotaract-club-of-bangalore-aagneya-388955218_team-gratitude-bangalore-activity-7081530253969412097-anXu/" },
               { Icon: Mail, label: "Email", href: "mailto:rotaractclubofbangaloreaagneya@gmail.com" },
             ].map(({ Icon, label, href }) => (
               <a

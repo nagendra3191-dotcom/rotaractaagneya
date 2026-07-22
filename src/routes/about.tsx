@@ -1,7 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { Heart, Users, Award, Globe2, Flame, Target, Eye, CheckCircle2, ArrowRight, Megaphone, Sparkles } from "lucide-react";
+import { Heart, Users, Award, Globe2, Flame, Target, Eye, CheckCircle2, Megaphone, Sparkles } from "lucide-react";
+
 import heroImg from "@/assets/brand/hero-new.jpg.asset.json";
 import clubLogo from "@/assets/brand/club-lockup.png.asset.json";
 
@@ -137,11 +138,8 @@ function AboutPage() {
             ))}
           </div>
 
-          <div className="mt-14 text-center">
-            <Link to="/team" className="inline-flex items-center gap-2 rounded-full bg-gold-gradient px-7 py-3.5 text-sm font-medium text-navy-deep shadow-gold-glow hover:brightness-110 transition">
-              Meet Our Team <ArrowRight size={16} />
-            </Link>
-          </div>
+
+
         </div>
       </section>
 
