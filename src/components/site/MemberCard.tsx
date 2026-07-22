@@ -40,11 +40,7 @@ export function MemberCard({ member, featured = false }: { member: Member; featu
             {member.role}
           </div>
           <div className="font-display text-xl leading-tight text-white">{member.name}</div>
-          {member.rid && (
-            <div className="mt-1.5 text-[10px] uppercase tracking-[0.2em] text-white/60">
-              {member.rid}
-            </div>
-          )}
+
         </div>
 
       </div>

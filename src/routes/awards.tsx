@@ -38,14 +38,15 @@ const outstanding = [
 ];
 
 const execRecognitions = [
-  "Rtr. Laasya A Bhagawan",
-  "Rtr. Sai Pavan A",
-  "PP. Rtn. Rtr. Nagendra Babu",
-  "Rtr. Farheen Taj",
-  "Rtr. Manish",
-  "PP. Rtr. Vishal S",
-  "Rtr. Ishita Poddar",
+  "Rtr. Ishita Poddar — District Social Media Director",
+  "PP. Rtn. Rtr. Nagendra Babu — District CSR and Partnership Director",
+  "PP. Rtr. Vishal S — Zonal Rotaract Representative",
+  "Rtr. Farheen Taj — District Sergeant At Arms Team",
+  "Rtr. Manish Rakshith — District Sergeant At Arms Team",
+  "Rtr. Sai Pavan A — District Community Service Team",
+  "Rtr. Laasya A Bhagawan — District International Service Team",
 ];
+
 
 const areaFocus = [
   "Nutri Smile",

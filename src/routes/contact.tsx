@@ -20,7 +20,7 @@ export const Route = createFileRoute("/contact")({
 const socials = [
   { Icon: Mail, label: "Email", value: "rotaractclubofbangaloreaagneya@gmail.com", href: "mailto:rotaractclubofbangaloreaagneya@gmail.com" },
   { Icon: Instagram, label: "Instagram", value: "@rotaractbangaloreaagneya", href: "https://instagram.com/rotaractbangaloreaagneya" },
-  { Icon: Linkedin, label: "LinkedIn", value: "Rotaract Bangalore Aagneya", href: "https://www.linkedin.com/company/rotaract-bangalore-aagneya" },
+  { Icon: Linkedin, label: "LinkedIn", value: "Rotaract Bangalore Aagneya", href: "https://www.linkedin.com/posts/rotaract-club-of-bangalore-aagneya-388955218_team-gratitude-bangalore-activity-7081530253969412097-anXu/" },
 ];
 
 const contacts = [
@@ -30,9 +30,10 @@ const contacts = [
 ];
 
 const intlDirectors = [
-  { name: "Rtr. Pavithra Ganta", role: "International Service Director", year: "Rotary Year 2026–2027" },
-  { name: "Rtr. Madhav K", role: "Joint International Service Director", year: "Rotary Year 2026–2027" },
+  { name: "Rtr. Pavithra Ganta", role: "International Service Director", year: "Rotary Year 2026–2027", phone: "+91 9113973362", tel: "+919113973362" },
+  { name: "Rtr. Madhav K", role: "Joint International Service Director", year: "Rotary Year 2026–2027", phone: "+91 7795946032", tel: "+917795946032" },
 ];
+
 
 function ContactCard({ c }: { c: (typeof contacts)[number] }) {
   return (
@@ -172,10 +173,20 @@ function ContactPage() {
                     <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft mb-2">{c.role}</div>
                     <div className="font-display text-xl text-white leading-tight">{c.name}</div>
                     <div className="mt-1 text-xs text-white/60">{c.year}</div>
+                    <a
+                      href={`tel:${c.tel}`}
+                      className="mt-5 inline-flex items-center gap-3 rounded-xl bg-white/5 backdrop-blur border border-white/10 px-4 py-2.5 text-sm text-white hover:bg-gold hover:text-navy-deep hover:border-gold transition-all"
+                    >
+                      <span className="h-7 w-7 rounded-lg bg-gold-gradient flex items-center justify-center shrink-0">
+                        <Phone size={12} className="text-navy-deep" />
+                      </span>
+                      <span className="font-medium tracking-wide">{c.phone}</span>
+                    </a>
                   </div>
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </section>

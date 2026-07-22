@@ -15,7 +15,7 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-2 max-w-md">
-            <img src={clubLockup.url} alt="Rotaract Club of Bangalore Aagneya" className="h-16 w-auto object-contain" style={{ filter: "brightness(1.1)" }} />
+            <img src={clubLockup.url} alt="Rotaract Club of Bangalore Aagneya" className="h-20 sm:h-24 lg:h-28 w-auto object-contain" style={{ filter: "brightness(1.1)" }} />
             <div className="mt-4">
               <div className="font-display text-xl">Rotaract Bangalore Aagneya</div>
               <div className="text-xs uppercase tracking-[0.25em] text-gold-soft mt-1">
@@ -28,10 +28,11 @@ export function Footer() {
             </p>
             <div className="mt-6 flex gap-3">
               <a href="https://instagram.com/rotaractbangaloreaagneya" target="_blank" rel="noreferrer" aria-label="Instagram" className="h-10 w-10 rounded-full glass flex items-center justify-center hover:bg-gold hover:text-navy-deep transition"><Instagram size={16} /></a>
-              <a href="https://www.linkedin.com/company/rotaract-bangalore-aagneya" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="h-10 w-10 rounded-full glass flex items-center justify-center hover:bg-gold hover:text-navy-deep transition"><Linkedin size={16} /></a>
+              <a href="https://www.linkedin.com/posts/rotaract-club-of-bangalore-aagneya-388955218_team-gratitude-bangalore-activity-7081530253969412097-anXu/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="h-10 w-10 rounded-full glass flex items-center justify-center hover:bg-gold hover:text-navy-deep transition"><Linkedin size={16} /></a>
               <a href="mailto:rotaractclubofbangaloreaagneya@gmail.com" aria-label="Email" className="h-10 w-10 rounded-full glass flex items-center justify-center hover:bg-gold hover:text-navy-deep transition"><Mail size={16} /></a>
             </div>
           </div>
+
 
           <div>
             <div className="text-xs uppercase tracking-[0.25em] text-gold-soft mb-4">Explore</div>
