@@ -342,7 +342,7 @@ function Home() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             {[
               { Icon: Instagram, label: "Instagram", href: "https://instagram.com/rotaractbangaloreaagneya" },
-              { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/rotaract-bangalore-aagneya" },
+              { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/posts/rotaract-club-of-bangalore-aagneya-388955218_team-gratitude-bangalore-activity-7081530253969412097-anXu/" },
               { Icon: Mail, label: "Email", href: "mailto:rotaractclubofbangaloreaagneya@gmail.com" },
             ].map(({ Icon, label, href }) => (
               <a
