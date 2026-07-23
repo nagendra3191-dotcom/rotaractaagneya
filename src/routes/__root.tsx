@@ -132,6 +132,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <SquadronAccents />
       <Outlet />
       <BloodDonationFab />
     </QueryClientProvider>
