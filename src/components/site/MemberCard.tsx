@@ -2,15 +2,7 @@ import { User } from "lucide-react";
 import type { Member } from "@/data/committee";
 import { portraitUrl } from "@/data/committee";
 
-export function MemberCard({
-  member,
-  featured = false,
-  harmonize = false,
-}: {
-  member: Member;
-  featured?: boolean;
-  harmonize?: boolean;
-}) {
+export function MemberCard({ member, featured = false }: { member: Member; featured?: boolean }) {
   const url = portraitUrl(member.portrait);
   return (
     <div className="group relative">
@@ -23,23 +15,13 @@ export function MemberCard({
         <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gold/25 z-10 pointer-events-none" />
         <div className="absolute inset-[3px] rounded-[14px] ring-1 ring-inset ring-white/5 z-10 pointer-events-none" />
 
-        {/* Harmonized navy backdrop for images whose lighting/background
-            varies — normalizes the visual appearance to match the rest. */}
-        {harmonize && (
-          <div className="absolute inset-0 bg-hero-gradient" />
-        )}
-
         {url ? (
           <img
             src={url}
             alt={member.name}
             loading="lazy"
             className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
-            style={
-              harmonize
-                ? { mixBlendMode: "luminosity", filter: "contrast(1.05) saturate(1.05)" }
-                : { mixBlendMode: "normal" }
-            }
+            style={{ mixBlendMode: "normal" }}
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">

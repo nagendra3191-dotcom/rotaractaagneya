@@ -12,7 +12,6 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { BloodDonationFab } from "@/components/site/BloodDonationFab";
-import { SquadronAccents } from "@/components/site/SquadronAccents";
 
 
 function NotFoundComponent() {
@@ -132,7 +131,6 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SquadronAccents />
       <Outlet />
       <BloodDonationFab />
     </QueryClientProvider>
