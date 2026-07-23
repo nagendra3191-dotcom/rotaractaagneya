@@ -65,7 +65,7 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/60 to-navy-deep" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/80 via-transparent to-transparent" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10 pb-28 pt-40 w-full">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10 pb-56 sm:pb-48 lg:pb-40 pt-40 w-full">
           <div className="max-w-3xl animate-fade-in">
             <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 mb-8">
               <Plane size={14} className="text-gold" />
