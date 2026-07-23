@@ -21,6 +21,16 @@ const core = committee.filter((m) => m.category === "core");
 const directors = committee.filter((m) => m.category === "director");
 const members = committee.filter((m) => m.category === "member");
 
+const HARMONIZE_NAMES = new Set<string>([
+  "IPP. Rtr. Sameen Mehnaz Fathima",
+  "Rtr. Abhishek Hiremath",
+  "Rtr. Eethamukkala Darga Babu",
+  "Rtr. Joyal Joshie George",
+  "Rtr. Sanjana Naveen",
+  "Rtr. Shreya Mishra",
+  "Rtr. Sridevi B S",
+]);
+
 function Section({ eyebrow, title, list }: { eyebrow: string; title: string; list: typeof committee }) {
   return (
     <section className="py-14 sm:py-16">
@@ -30,7 +40,7 @@ function Section({ eyebrow, title, list }: { eyebrow: string; title: string; lis
       </div>
       <div className="mt-10 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {list.map((m) => (
-          <MemberCard key={m.name} member={m} />
+          <MemberCard key={m.name} member={m} harmonize={HARMONIZE_NAMES.has(m.name)} />
         ))}
       </div>
     </section>
