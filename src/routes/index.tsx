@@ -104,7 +104,7 @@ function Home() {
         <div className="absolute bottom-0 inset-x-0 z-10 border-t border-white/10 backdrop-blur-md bg-navy-deep/50">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
             <div className="pt-3 pb-1 text-center text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-gold-soft/90">
-              Rotary Year 2025–2026
+              Rotary Year 2026–2027
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
               {stats.map((s) => (
