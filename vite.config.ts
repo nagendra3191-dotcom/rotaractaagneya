@@ -1,12 +1,7 @@
-import { defineConfig } from "vite";
-import { defineConfig as defineTanStackConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineTanStackConfig({
+export default defineConfig({
   vite: {
     base: "/",
-    build: {
-      outDir: "dist",
-      emptyOutDir: true,
-    }
-  }
+  },
 });
