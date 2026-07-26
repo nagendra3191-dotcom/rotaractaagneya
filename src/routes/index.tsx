@@ -18,8 +18,8 @@ export const Route = createFileRoute("/")({
         content:
           "The Rotaract Club of Bangalore Aagneya (RID 3191) — igniting leadership, inspiring change, and building lasting impact in Rotary Year 2026–27.",
       },
-      { property: "og:title", content: "Rotaract Bangalore Aagneya · RY 2026–27" },
-      { property: "og:description", content: "Igniting Leadership. Inspiring Change. Building Aagneya Together." },
+      { property: "og:title", content: "Rotaract Bangalore Aagneya — Igniting Leadership, Inspiring Change" },
+      { property: "og:description", content: "The Rotaract Club of Bangalore Aagneya (RID 3191) — igniting leadership, inspiring change, and building lasting impact in Rotary Year 2026–27." },
       { property: "og:image", content: heroImg.url },
       { name: "twitter:image", content: heroImg.url },
     ],
@@ -104,7 +104,7 @@ function Home() {
         <div className="absolute bottom-0 inset-x-0 z-10 border-t border-white/10 backdrop-blur-md bg-navy-deep/50">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
             <div className="pt-3 pb-1 text-center text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-gold-soft/90">
-              Rotary Year 2026–2027
+              Rotary Year 2025–2026
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
               {stats.map((s) => (

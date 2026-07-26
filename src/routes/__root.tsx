@@ -79,21 +79,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Rotaract Club of Bangalore Aagneya — Create Lasting Impact" },
+      { title: "Rotaract Bangalore Aagneya — Igniting Leadership, Inspiring Change" },
       {
         name: "description",
         content:
-          "The Rotaract Club of Bangalore Aagneya, Rotary International District 3191 — a community of young leaders creating lasting impact through service, fellowship, and professional development.",
+          "The Rotaract Club of Bangalore Aagneya (RID 3191) — igniting leadership, inspiring change, and building lasting impact in Rotary Year 2026–27.",
       },
       { name: "author", content: "Rotaract Bangalore Aagneya" },
-      { property: "og:title", content: "Rotaract Club of Bangalore Aagneya" },
+      { property: "og:title", content: "Rotaract Bangalore Aagneya — Igniting Leadership, Inspiring Change" },
       {
         property: "og:description",
         content:
-          "A community of young leaders creating lasting impact through service, fellowship, and professional development. RID 3191.",
+          "The Rotaract Club of Bangalore Aagneya (RID 3191) — igniting leadership, inspiring change, and building lasting impact in Rotary Year 2026–27.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Rotaract Bangalore Aagneya — Igniting Leadership, Inspiring Change" },
+      { name: "twitter:description", content: "The Rotaract Club of Bangalore Aagneya (RID 3191) — igniting leadership, inspiring change, and building lasting impact in Rotary Year 2026–27." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/97b8345c-3c14-48e0-9780-804628359c93/id-preview-6f684689--89d12942-d620-43fb-9fd3-cfcd940a1ad0.lovable.app-1785049918097.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/97b8345c-3c14-48e0-9780-804628359c93/id-preview-6f684689--89d12942-d620-43fb-9fd3-cfcd940a1ad0.lovable.app-1785049918097.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
