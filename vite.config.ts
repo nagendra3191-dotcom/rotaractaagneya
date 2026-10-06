@@ -9,9 +9,9 @@ export default defineConfig({
   },
   ...(isGithubPages
     ? {
-        nitro: { preset: "static" },
+        nitro: false,
         tanstackStart: {
-          prerender: { enabled: true, crawlLinks: true, failOnError: false },
+          prerender: { enabled: true, failOnError: false },
         },
       }
     : {}),
