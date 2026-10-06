@@ -42,6 +42,8 @@ jobs:
           cp CNAME dist/client/CNAME
           cp dist/client/index.html dist/client/404.html
           touch dist/client/.nojekyll
+          # Photos are stored on Lovable; point them at the Lovable site
+          grep -rl "/__l5e/assets-v1" dist/client | xargs -r sed -i 's#"/__l5e/assets-v1#"https://aagneyan-gold-glow.lovable.app/__l5e/assets-v1#g'
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
