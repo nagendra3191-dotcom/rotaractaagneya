@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- GitHub Pages build: workflow sets GITHUB_PAGES=1, which makes vite.config prerender static HTML (nitro off) into dist/client and rewrites /__l5e asset URLs to the Lovable site. Why: GitHub Pages only serves static files; normal Lovable builds stay unchanged.
