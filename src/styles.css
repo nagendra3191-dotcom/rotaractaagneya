@@ -156,3 +156,75 @@
 
 .animate-fade-up { animation: fade-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
 .animate-float { animation: float-slow 6s ease-in-out infinite; }
+
+/* ============ Fighter-jet loading screen ============ */
+.jet-loader { transition: opacity 0.7s ease; }
+.jet-loader-fade { opacity: 0; pointer-events: none; }
+
+.jet-loader-grid {
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 75%);
+}
+
+.jet-loader-sweep {
+  background: conic-gradient(
+    from 0deg,
+    rgba(56, 189, 248, 0) 0deg,
+    rgba(56, 189, 248, 0) 290deg,
+    rgba(56, 189, 248, 0.12) 320deg,
+    rgba(125, 211, 252, 0.35) 350deg,
+    rgba(186, 230, 253, 0.6) 360deg
+  );
+  animation: jet-spin 2.6s linear infinite;
+}
+
+.jet-loader-ring { animation: jet-ring 2.4s ease-out infinite; }
+.jet-loader-jet {
+  mix-blend-mode: screen;
+  animation: jet-float 4s ease-in-out infinite, jet-bright 2.2s ease-in-out infinite;
+}
+.jet-loader-halo {
+  animation: jet-halo 2.2s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.35) 0%, rgba(56, 189, 248, 0.12) 45%, transparent 70%);
+}
+.jet-loader-scan { animation: jet-scan 3.2s linear infinite; }
+.jet-loader-blip { animation: jet-blip 1.3s steps(2, start) infinite; }
+.jet-loader-flicker { animation: jet-flicker 3.5s linear infinite; }
+
+@keyframes jet-spin { to { transform: rotate(360deg); } }
+@keyframes jet-ring {
+  0% { transform: scale(0.45); opacity: 0.8; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+@keyframes jet-float {
+  0%, 100% { transform: translateY(-7px); }
+  50% { transform: translateY(7px); }
+}
+@keyframes jet-bright {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+}
+@keyframes jet-halo {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+@keyframes jet-scan {
+  0% { top: 4%; opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { top: 96%; opacity: 0; }
+}
+@keyframes jet-blip { 50% { opacity: 0; } }
+@keyframes jet-flicker {
+  0%, 91%, 94%, 100% { opacity: 1; }
+  92% { opacity: 0.35; }
+  96% { opacity: 0.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jet-loader-sweep, .jet-loader-ring, .jet-loader-jet, .jet-loader-scan,
+  .jet-loader-blip, .jet-loader-flicker { animation: none; }
+}
