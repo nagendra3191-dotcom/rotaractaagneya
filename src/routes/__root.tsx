@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { BloodDonationFab } from "@/components/site/BloodDonationFab";
+import { JetLoadingScreen } from "@/components/site/JetLoadingScreen";
 
 
 function NotFoundComponent() {
@@ -136,6 +137,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <JetLoadingScreen />
       <Outlet />
       <BloodDonationFab />
     </QueryClientProvider>
