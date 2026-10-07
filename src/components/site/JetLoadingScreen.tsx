@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import jetImg from "@/assets/loading/jet-hologram.png";
+import rotaractMark from "@/assets/brand/rotaract-mark.png";
 
 const MIN_DURATION = 2200;
 const FADE_DURATION = 700;
 
 export function JetLoadingScreen() {
   const [progress, setProgress] = useState(0);
+  const [ready, setReady] = useState(false);
   const [fading, setFading] = useState(false);
   const [hidden, setHidden] = useState(false);
 
@@ -17,9 +19,7 @@ export function JetLoadingScreen() {
     }, 60);
     const finish = setTimeout(() => {
       setProgress(100);
-      setFading(true);
-      const gone = setTimeout(() => setHidden(true), FADE_DURATION);
-      return () => clearTimeout(gone);
+      setReady(true);
     }, MIN_DURATION);
     return () => {
       clearInterval(tick);
@@ -27,14 +27,26 @@ export function JetLoadingScreen() {
     };
   }, []);
 
+  const enter = () => {
+    if (!ready || fading) return;
+    setFading(true);
+    setTimeout(() => setHidden(true), FADE_DURATION);
+  };
+
   if (hidden) return null;
 
   return (
     <div
-      aria-hidden
+      role="button"
+      tabIndex={ready ? 0 : -1}
+      aria-label="Enter the Rotaract Club of Aagneya website"
+      onClick={enter}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") enter();
+      }}
       className={`jet-loader fixed inset-0 z-[10000] overflow-hidden bg-black ${
         fading ? "jet-loader-fade" : ""
-      }`}
+      } ${ready ? "cursor-pointer" : "cursor-wait"}`}
     >
       {/* faint tactical grid */}
       <div className="jet-loader-grid absolute inset-0" />
@@ -55,7 +67,9 @@ export function JetLoadingScreen() {
         <span className="mt-1 block text-sky-500/60">ALT 12.4K · VEL 680KT</span>
       </div>
       <div className="absolute bottom-9 left-8 font-mono text-[10px] tracking-[0.3em] text-sky-300/80 sm:text-xs">
-        <span className="jet-loader-flicker block">INITIALIZING FLIGHT SYSTEMS…</span>
+        <span className="jet-loader-flicker block">
+          {ready ? "SYSTEMS READY — AWAITING PILOT" : "INITIALIZING FLIGHT SYSTEMS…"}
+        </span>
       </div>
       <div className="absolute bottom-9 right-8 text-right font-mono text-[10px] tracking-[0.3em] text-sky-300/80 sm:text-xs">
         <span className="jet-loader-blip mr-2 inline-block h-1.5 w-1.5 rounded-full bg-sky-400 align-middle" />
@@ -108,6 +122,30 @@ export function JetLoadingScreen() {
 
       {/* vertical scan line */}
       <div className="jet-loader-scan absolute left-0 h-px w-full bg-gradient-to-r from-transparent via-sky-400/70 to-transparent" />
+
+      {/* Rotaract emblem + click-to-enter, revealed when loading completes */}
+      <div
+        className={`absolute inset-x-0 bottom-[16%] flex flex-col items-center gap-4 transition-all duration-700 sm:bottom-[14%] ${
+          ready ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
+        }`}
+      >
+        <img
+          src={rotaractMark}
+          alt="Rotaract emblem"
+          width={96}
+          height={96}
+          className="jet-loader-mark h-16 w-16 select-none sm:h-20 sm:w-20"
+          draggable={false}
+        />
+        <div className="flex flex-col items-center gap-2">
+          <span className="jet-loader-enter font-mono text-xs tracking-[0.5em] text-sky-200 sm:text-sm">
+            CLICK TO ENTER
+          </span>
+          <span className="font-mono text-[10px] tracking-[0.3em] text-sky-500/70">
+            ROTARACT CLUB OF AAGNEYA
+          </span>
+        </div>
+      </div>
 
       {/* bottom progress bar */}
       <div className="absolute bottom-0 left-0 h-[3px] w-full bg-sky-950/60">

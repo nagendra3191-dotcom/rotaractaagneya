@@ -228,3 +228,16 @@
   .jet-loader-sweep, .jet-loader-ring, .jet-loader-jet, .jet-loader-scan,
   .jet-loader-blip, .jet-loader-flicker { animation: none; }
 }
+
+/* click-to-enter reveal */
+.jet-loader-mark { filter: drop-shadow(0 0 18px rgba(56,189,248,0.55)); animation: jet-mark-pulse 2.4s ease-in-out infinite; }
+.jet-loader-enter { animation: jet-enter-pulse 1.6s ease-in-out infinite; }
+@keyframes jet-mark-pulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 14px rgba(56,189,248,0.45)); }
+  50% { transform: scale(1.06); filter: drop-shadow(0 0 26px rgba(56,189,248,0.8)); }
+}
+@keyframes jet-enter-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .jet-loader-mark, .jet-loader-enter { animation: none; }
+}
