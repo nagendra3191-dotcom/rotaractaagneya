@@ -79,6 +79,8 @@ export function JetLoadingScreen() {
           <div className="absolute top-1/2 left-0 h-px w-full bg-sky-400/10" />
           {/* rotating radar sweep */}
           <div className="jet-loader-sweep absolute inset-0 rounded-full" />
+          {/* ambient round glow behind the jet */}
+          <div className="jet-loader-halo absolute inset-[-30%] rounded-full" />
           {/* random blips */}
           <span className="jet-loader-blip absolute left-[22%] top-[30%] h-1.5 w-1.5 rounded-full bg-sky-300 shadow-[0_0_8px_rgba(56,189,248,0.9)]" />
           <span
