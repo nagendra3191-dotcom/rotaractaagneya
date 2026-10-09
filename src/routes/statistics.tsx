@@ -12,6 +12,8 @@ export const Route = createFileRoute("/statistics")({
       { name: "description", content: "Projects avenue-wise and across the 7 Rotary Areas of Focus for RY 2025–26 — 138 projects visualized." },
       { property: "og:title", content: "Statistics — Rotaract Bangalore Aagneya" },
       { property: "og:description", content: "138 projects. Six avenues. Seven Areas of Focus. One mission." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/statistics" }],
   }),
