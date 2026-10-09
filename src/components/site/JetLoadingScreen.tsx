@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import jetImg from "@/assets/loading/jet-hologram.png";
-import rotaractMark from "@/assets/brand/rotaract-mark.png";
+import rotaractMark from "@/assets/brand/rotaract-mark.png.asset.json";
 
 const MIN_DURATION = 2200;
 const FADE_DURATION = 700;
@@ -15,7 +15,7 @@ export function JetLoadingScreen() {
     const start = Date.now();
     const tick = setInterval(() => {
       const elapsed = Date.now() - start;
-      setProgress(Math.min(99, Math.round((elapsed / MIN_DURATION) * 100)));
+      setProgress(Math.min(100, Math.round((elapsed / MIN_DURATION) * 100)));
     }, 60);
     const finish = setTimeout(() => {
       setProgress(100);
@@ -130,7 +130,7 @@ export function JetLoadingScreen() {
         }`}
       >
         <img
-          src={rotaractMark}
+           src={rotaractMark.url}
           alt="Rotaract emblem"
           width={96}
           height={96}

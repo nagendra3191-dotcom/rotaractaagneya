@@ -21,7 +21,8 @@ export const Route = createFileRoute("/projects")({
       { name: "description", content: "138+ projects across six service avenues — signature initiatives from Rotaract Bangalore Aagneya, RID 3191." },
       { property: "og:title", content: "Projects — Rotaract Bangalore Aagneya" },
       { property: "og:description", content: "Signature initiatives from Aagneya, RID 3191." },
-      { property: "og:image", content: p1.url },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/projects" }],
   }),
@@ -188,7 +189,8 @@ function ProjectsPage() {
                         <img
                           src={p.img.url}
                           alt={p.t}
-                          loading="lazy"
+                          loading="eager"
+                          decoding="async"
                           className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 via-navy-deep/10 to-transparent" />
