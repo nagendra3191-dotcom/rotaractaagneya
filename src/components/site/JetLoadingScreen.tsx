@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import jetImg from "@/assets/loading/jet-hologram.png";
 import rotaractMark from "@/assets/brand/rotaract-mark.png.asset.json";
+import { hasEnteredSite, rememberSiteEntry } from "@/lib/entry-screen";
 
 const MIN_DURATION = 2200;
 const FADE_DURATION = 700;
@@ -9,9 +10,11 @@ export function JetLoadingScreen() {
   const [progress, setProgress] = useState(0);
   const [ready, setReady] = useState(false);
   const [fading, setFading] = useState(false);
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
 
   useEffect(() => {
+    if (hasEnteredSite(window.sessionStorage)) return;
+    setHidden(false);
     const start = Date.now();
     const tick = setInterval(() => {
       const elapsed = Date.now() - start;
@@ -29,6 +32,7 @@ export function JetLoadingScreen() {
 
   const enter = () => {
     if (!ready || fading) return;
+    rememberSiteEntry(window.sessionStorage);
     setFading(true);
     setTimeout(() => setHidden(true), FADE_DURATION);
   };
