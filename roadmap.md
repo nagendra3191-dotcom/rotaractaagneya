@@ -1,0 +1,3 @@
+- [ ] Match the seven newer portrait backgrounds to the original photos without changing faces.
+- [ ] Load photos immediately across the site and verify navigation without refreshing.
+- [ ] Repair the missing preloader logo reference and verify click-to-enter.
