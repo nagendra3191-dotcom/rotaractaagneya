@@ -9,4 +9,5 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- GitHub Pages build: workflow sets GITHUB_PAGES=1, which makes vite.config prerender static HTML (nitro off) into dist/client and rewrites /__l5e asset URLs to the Lovable site. Why: GitHub Pages only serves static files; normal Lovable builds stay unchanged.
+- GitHub Pages build: workflow resolves asset pointer URLs to the Lovable site before building and sets GITHUB_PAGES=1 to prerender static HTML (nitro off) into dist/client. Why: GitHub Pages needs static files and identical image URLs in prerendered HTML and client navigation; normal Lovable builds stay unchanged.
+- All committee portraits use MemberCard and the same 4:5 image canvas; match new portrait backgrounds to existing assets without generating or altering faces. Why: one rendering path keeps new and existing members visually consistent.
