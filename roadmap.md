@@ -1,4 +1,4 @@
 - [x] Match the seven newer portrait backgrounds to the original photos without changing faces.
 - [x] Load photos immediately across the site and verify navigation without refreshing.
 - [x] Repair the missing preloader logo reference and verify click-to-enter.
-- [ ] Prevent repeated entry prompts on page reloads and verify navigation and tab-session behavior.
+- [x] Prevent repeated entry prompts on page reloads and verify navigation and tab-session behavior.
