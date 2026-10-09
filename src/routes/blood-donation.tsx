@@ -11,6 +11,8 @@ export const Route = createFileRoute("/blood-donation")({
       { name: "description", content: "Donate blood, request blood, or organize a camp with the Rotaract Club of Bangalore Aagneya. Every drop saves lives." },
       { property: "og:title", content: "Blood Donation — Rotaract Bangalore Aagneya" },
       { property: "og:description", content: "Every drop counts. Join Aagneya's life-saving mission." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/blood-donation" }],
   }),

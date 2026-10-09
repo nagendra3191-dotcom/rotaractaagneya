@@ -11,6 +11,8 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Reach out to the Rotaract Club of Bangalore Aagneya — join, collaborate, or explore international partnerships." },
       { property: "og:title", content: "Contact — Rotaract Bangalore Aagneya" },
       { property: "og:description", content: "Get in touch with Aagneya, RID 3191." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
   }),

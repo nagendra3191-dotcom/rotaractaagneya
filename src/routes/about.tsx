@@ -13,6 +13,8 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "The story of the Rotaract Club of Bangalore Aagneya — our mission, vision, values, and the four avenues of service that define us." },
       { property: "og:title", content: "About Aagneya" },
       { property: "og:description", content: "Born of fire. Built to serve. The story of Rotaract Bangalore Aagneya, RID 3191." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
   }),

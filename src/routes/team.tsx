@@ -11,6 +11,8 @@ export const Route = createFileRoute("/team")({
       { name: "description", content: "Meet the 40+ Rotaractors of Bangalore Aagneya — our Core Committee, Directors & Chairs, and Proud Members for RY 2026–27." },
       { property: "og:title", content: "Our Team — Rotaract Bangalore Aagneya" },
       { property: "og:description", content: "The people of Aagneya, RID 3191 — RY 2026–27." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/team" }],
   }),
